@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:model_study_test/image_list_page.dart';
-import 'package:model_study_test/main_model.dart';
+import 'package:model_study_test/presentation/image_list/image_list_page.dart';
+import 'package:model_study_test/presentation/main/main_model.dart';
 import 'package:provider/provider.dart';
 
 Future <void> main() async {

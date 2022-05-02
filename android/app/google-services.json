@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "672656906647",
+    "project_id": "kinniku-test-abe78",
+    "storage_bucket": "kinniku-test-abe78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672656906647:android:d6bd5ee7161fcfb7b2ccd2",
+        "android_client_info": {
+          "package_name": "com.example.model_study_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672656906647-kj07s6a82dn716s5c3kk9kq1o1hgei01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXA9ls_voFOxyRX802D_FkQHLjHlQqUNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672656906647-kj07s6a82dn716s5c3kk9kq1o1hgei01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

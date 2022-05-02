@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:model_study_test/presentation/add_image/add_image_page.dart';
 import 'package:model_study_test/presentation/image_list/image_list_model.dart';
@@ -7,9 +8,7 @@ class ImageListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ImageListModel>(
-        create: (_) =>
-        ImageListModel()
-          ..fetchImages(),
+        create: (_) => ImageListModel()..fetchImages(),
         builder: (context, snapshot) {
           return Scaffold(
             appBar: AppBar(),
@@ -17,32 +16,17 @@ class ImageListPage extends StatelessWidget {
               final books = model.books;
               final listtiles = books
                   .map(
-                      (book) =>
-                      ListTile(
-                        title: Text(book.title),
-                        trailing: IconButton(
-                            icon: Icon(Icons.edit),
-                            onPressed: () async {
-
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AddImagePage(),
-                                ),
-                              );
-                              await model.fetchImages();
-                            }
-                        ),
-                      )
-              )
+                    (book) => ListTile(
+                      title: Text(book.title),
+                    ),
+                  )
                   .toList();
               return ListView(
-                children: listtiles
-                ,
+                children: listtiles,
               );
             }),
             floatingActionButton:
-            Consumer<ImageListModel>(builder: (context, model, child) {
+                Consumer<ImageListModel>(builder: (context, model, child) {
               return FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: () async {

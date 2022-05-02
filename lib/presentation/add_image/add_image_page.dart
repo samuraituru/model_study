@@ -1,32 +1,22 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:model_study_test/domain/image.dart';
 import 'package:model_study_test/presentation/add_image/add_image_model.dart';
 import 'package:provider/provider.dart';
 
 class AddImagePage extends StatelessWidget {
-  AddImagePage({this.book});
-  final book;
   @override
   Widget build(BuildContext context) {
-    final bool isUpdate = book != null;
-    final textEditingController = TextEditingController();
-
-    if (isUpdate) {
-      textEditingController.text = book.title;
-    }
-
     return ChangeNotifierProvider<AddBookModel>(
         create: (_) => AddBookModel(),
         builder: (context, snapshot) {
           return Scaffold(
             appBar: AppBar(
-              title: Text(isUpdate ? '本を編集' : '本を追加'),
+              title: Text('本追加画面'),
             ),
             body: Consumer<AddBookModel>(builder: (context, model, child) {
               return Column(
                 children: [
                   TextField(
-                    controller: textEditingController,
                     onChanged: (text) {
                       model.imagename = text;
                     },
@@ -71,7 +61,7 @@ class AddImagePage extends StatelessWidget {
                           );
                         }
                       },
-                      child: Text(isUpdate ? '編集' : '追加')),
+                      child: Text('本追加')),
                 ],
               );
             }),

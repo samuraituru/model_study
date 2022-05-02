@@ -7,7 +7,7 @@ class ImageListModel extends ChangeNotifier {
 
   Future fetchImages() async {
     final docs = await FirebaseFirestore.instance.collection('images').get();
-    final books = docs.docs.map((doc) => Book(doc)).toList();
+    final books = docs.docs.map((v) => Book(v['title'])).toList();
     this.books = books;
     notifyListeners();
   }
